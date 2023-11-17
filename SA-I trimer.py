@@ -17,7 +17,7 @@ trajectory = u.trajectory
 from numpy import linalg as LA
 norm = LA.linalg.norm
 
-# finding the size of the periodic box
+# finding the size of the periodic box conditions
 from itertools import product
 dimensions = u.dimensions[0]
 pbc_scale = dimensions/2
