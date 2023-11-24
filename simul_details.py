@@ -1,4 +1,4 @@
-
+Snapshot of  information from Jupyter notebook of the simulation details 
 In [33]: TIP3 + SOD + CLA
 Out[33]: <AtomGroup with 69024 atoms>
 
@@ -40,27 +40,4 @@ Density                     1028.19       0.16    5.40865  -0.620701  (kg/m^3)
 pV                          8.23924     0.0012  0.0438049 0.00460785  (kJ/mol)
 Enthalpy                    -156842         21    717.878   -154.709  (kJ/mol)
 
-res1 = "GLU"
-   ...: res2 = ["ALA", "PHE", "MET", "LYS", "LEU", "ILE", "GLN", "THR", "GLY", "
-   ...: TYR", "VAL", "SER", "TRP", "HSD", "ASN", "GLU"]
-   ...: a = 3.91
-   ...: percent_bound = []
-   ...: av_contacts = []
-   ...: for item in res2:
-   ...:     saltbridge1 = "(resname %s) and (name CA)"%res1
-   ...:     saltbridge2 = "(resname %s) and (name CA)"%item
-   ...:     bridge2 = peptide.select_atoms(saltbridge1)
-   ...:     bridge3 = peptide.select_atoms(saltbridge2)
-   ...:     ca = contacts_within_cutoff(u, bridge2, bridge3, radius=a)
-   ...:     x, y = zip(*ca)
-   ...:     p = sum(y)
-   ...:     m = p/len(y)
-   ...:     print("{a}-{b} + thresh = {c}".format(a=res1, b=item, c=a))
-   ...:     s = []
-   ...:     for i in y:
-   ...:         if i > 0:
-   ...:             s.append(i)
-   ...:     frac = len(s)/len(y)
-   ...:     print("frac =", frac)
-   ...:     print("av =", m)
-   ...:     percent_bound.append(frac)
+
