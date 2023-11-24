@@ -22,7 +22,7 @@ def contacts_within_cutoff(u, group_a, group_b, radius=10):
 
 # residues are numbered in MD analysis 
 # define a residue as a collection of atoms => equivalent to a "salt bridge"
-# find the number of residues in contact wih this within a certain cutoff
+# find the number of residues in contact wih this within a certain cutoff = a
 # using visual molecular dynamics, 8nm was found to be the cutoff distance
 res1 = 4
 res2 = list(range(2,50))
@@ -52,6 +52,25 @@ for item in res2:
 	
 np.savetxt("res{a}_contacts_{c}A.txt".format(a=res1,c=a), l, fmt='%s')
 
-
+# alternative script was also made using residue names within gromacs
+res1 = "ALA"
+res2 = ["ALA", "GLY", "LEU", "ILE", "PHE", "MET", "TRP", "VAL"]
+a = 8
+for item in res2:
+	saltbridge1 = "(resname %s)"%res1
+	saltbridge2 = "(resname %s)"%item
+	bridge2 = peptide2.select_atoms(saltbridge1)
+	bridge3 = peptide3.select_atoms(saltbridge2)
+	ca = contacts_within_cutoff(u, bridge2, bridge3, radius=a)
+	x, y = zip(*ca)
+	p = sum(y)
+	m = p/len(y)
+	print("N2_{a}-N3_{b} + thresh = {c}".format(a=res1, b=item, c=a))
+	s = []
+	for i in y:
+		if i > 0:
+			s.append(i)
+	print("frac =", len(s)/len(y))
+	print("av =", m)
 
 
