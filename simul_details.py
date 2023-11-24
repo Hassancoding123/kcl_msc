@@ -1,4 +1,4 @@
-Snapshot of  information from Jupyter notebook of the simulation details 
+# Snapshot of  information from Jupyter notebook of the simulation details 
 In [33]: TIP3 + SOD + CLA
 Out[33]: <AtomGroup with 69024 atoms>
 
