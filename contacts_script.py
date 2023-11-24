@@ -1,3 +1,5 @@
+# similar to contact_frac script - focused on lysine and glutamine residue contacts
+
 saltbridge = "(resname LYS GLU) and (name CA CA)"
 bridge1 = peptide1.select_atoms(saltbridge)
 bridge2 = peptide2.select_atoms(saltbridge)
