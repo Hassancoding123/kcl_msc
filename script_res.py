@@ -4,6 +4,7 @@ import numpy as np
 from numpy import linalg as LA
 norm = LA.linalg.norm
 
+# split peptides into residue based on the groups of atoms within the residues
 res_peptide2 = []
 res_peptide1 = []
 res_peptide3 = []
@@ -15,9 +16,11 @@ for i in range (2,50):
 	res_peptide2.append(b)
 	res_peptide1.append(a)
 
+# printed list of the residue position in peptide 2
 p2_2, p2_3, p2_4, p2_5, p2_6, p2_7, p2_8, p2_9, p2_10, p2_11, p2_12, p2_13, p2_14, p2_15, p2_16, p2_17, p2_18, p2_19, p2_20, p2_21, p2_22, p2_23, p2_24, p2_25,
 p2_26, p2_27, p2_28, p2_29, p2_30, p2_31, p2_32, p2_33, p2_34, p2_35, p2_36, p2_37, p2_38, p2_39, p2_40, p2_41, p2_42, p2_43, p2_44, p2_45, p2_46, p2_47, p2_48, p2_49 = res_peptide2
 
+# finding min distance between an arbitrary residue in peptide 2 and another residues in another peptide
 mins = []
 for i in range(0, 48):
 	m = product(p2_2, eval('p3_%d'% (i+2)))
