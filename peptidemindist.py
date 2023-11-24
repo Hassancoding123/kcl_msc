@@ -1,3 +1,6 @@
+# algorithm to find the minimum distance between carbon alpha atoms in two different peptides
+# aim = to see if peptides would bond by remaining under a threshold minimum distance
+
 min_1_2 = []
 CA1 = peptide1.select_atoms("name CA")
 CA2 = peptide2.select_atoms("name CA")
