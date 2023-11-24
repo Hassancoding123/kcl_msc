@@ -1,3 +1,5 @@
+# algorithm made to find the charged and hydrophobic residue percentages within a peptide
+
 w, e = [], []
 for item in q:
     if 0 <= float(item[1]) <= thresh:
