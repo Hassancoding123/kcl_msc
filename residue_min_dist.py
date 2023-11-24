@@ -1,3 +1,5 @@
+# similar to peptide min dist script except now using carbon alphas AND residue names to find residue-residue contacts during simulation between 2 peptides
+
 res_min_dists = []
 res_no = 3
 for ts in trajectory:
